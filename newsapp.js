@@ -48,6 +48,7 @@ $(document).ready(function(){
 
 $("#category").click(function(){
     $('h3').show();
+    $("#sel").hide();
    if($("#category").val() == "Business")
    var n_url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=b10e2e754b6c4f658f64feeb789d2c3b";
    else if($("#category").val() == "Sports")
@@ -57,7 +58,10 @@ $("#category").click(function(){
    else if($("#category").val() == "Technology")
    var n_url = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=b10e2e754b6c4f658f64feeb789d2c3b";
    else
-   $("#sel").show();
+   {
+    $("#sel").show();
+    $('h3').hide();
+   }
  $.ajax({
 
     type:"GET",
