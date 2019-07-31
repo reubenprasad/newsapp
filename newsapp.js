@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('h3').hide();
+    $("#sel").hide();
     var stickyNavTop = $('.nav').offset().top;
     var stickyNav = function(){
      var scrollTop = $(window).scrollTop();     
@@ -49,13 +50,14 @@ $("#category").click(function(){
     $('h3').show();
    if($("#category").val() == "Business")
    var n_url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=b10e2e754b6c4f658f64feeb789d2c3b";
-   if($("#category").val() == "Sports")
+   else if($("#category").val() == "Sports")
    var n_url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=b10e2e754b6c4f658f64feeb789d2c3b";
-   if($("#category").val() == "Entertainment")
+   else if($("#category").val() == "Entertainment")
    var n_url = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=b10e2e754b6c4f658f64feeb789d2c3b";
-   if($("#category").val() == "Technology")
+   else if($("#category").val() == "Technology")
    var n_url = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=b10e2e754b6c4f658f64feeb789d2c3b";
-   
+   else
+   $("#sel").show();
  $.ajax({
 
     type:"GET",
